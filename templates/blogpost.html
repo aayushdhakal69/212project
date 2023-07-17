@@ -1,0 +1,263 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static '212.png' %}" />
+    <title>Blog</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+        * {
+            /* font-family: 'Roboto', sans-serif; */
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .goBack {
+            padding: .7rem 2rem;
+            border: none;
+            background: rgb(35, 35, 36);
+            box-shadow: black 1px 3px 5px;
+            color: white;
+            border-radius: .5rem;
+            margin: 1rem 0 1rem .5rem;
+            cursor: pointer;
+
+        }
+
+        :root {
+            --bgcolorBlog: rgb(35, 35, 36);
+        }
+
+        .blogContainer {
+            background: var(--bgcolorBlog);
+            color: #fff;
+        }
+
+        .blogContainer img {
+            width: 100%;
+        }
+
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: var(--bgcolorBlog);
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        .dateLocation {
+            padding: 1rem;
+        }
+
+        .main .bannerPhoto {
+            width: 80%;
+            height: 60vh;
+            object-fit: cover;
+            overflow: hidden;
+            /* background-image: url("media/{{postt.mainimage}}"); */
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: .2rem;
+            border: 2px solid cyan;
+        }
+
+
+        .main .dateLocation {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .location {
+            letter-spacing: 10px;
+            font-weight: bold;
+        }
+
+        .bannerInfo,
+        .longInfo {
+            width: 50%;
+            padding: 1rem;
+            margin: 0 auto;
+        }
+
+        /* grid Container */
+        .gridContainer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 1rem;
+            padding: 10px;
+        }
+
+        .gridContainer .gridBox {
+            height: 27rem;
+            width: 40rem;
+        }
+
+        .gridBox .image {
+
+            width: 100%;
+            height: 100%;
+            background-image: url("/amit.jpeg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            border-radius: .2rem;
+            transition: all 0.2s ease;
+        }
+
+        .gridBox .image:hover {
+            transform: scale(1.025);
+        }
+
+        @media (max-width:480px) {
+            .gridBox {
+                width: 100%;
+                background: red;
+            }
+
+            .bannerInfo,
+            .longInfo {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .main .bannerPhoto {
+                width: 100%;
+            }
+        }
+
+        h2,
+        h3 {
+            border-radius: 2px;
+            border-bottom: 4px solid cyan;
+        }
+
+        p {
+            padding: 20px;
+            font-size: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .ani-hr {
+            border: none;
+            height: 2px;
+            background-color: cyan;
+
+        }
+
+        /* date sano */
+        .dateLocation h3 {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body class="blogContainer">
+
+    <a href="/">
+        <button class="goBack">
+            Go Back
+        </button>
+    </a>
+    <div class="main">
+        <div class="bannerPhoto" style="background-image: url(/media/{{postt.mainimage}});">
+        </div>
+
+        <div class="dateLocation">
+            <h2 class="location">
+                {{postt.location}}
+            </h2>
+            <h3>
+                {{postt.datee}}
+            </h3>
+
+        </div>
+
+
+        <div class="bannerInfo">
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat distinctio cum qui, ut, dolor
+                odit, deleniti neque temporibus consequatur ad explicabo exercitationem provident. Eius animi soluta
+                asperiores molestias doloremque repellat?</p>
+            <hr class="ani-hr">
+        </div>
+
+    </div>
+
+    <div class="gridContainer">
+        <div class="gridBox">
+            <div class="image" style="background-image: url(/media/{{postt.imgone}});">
+                <!-- <img src="samir.jpeg" alt=""> -->
+            </div>
+        </div>
+        <div class="gridBox">
+            <div class="image" style="background-image: url(/media/{{postt.imgtwo}});">
+                <!-- <img src="samir.jpeg" alt=""> -->
+            </div>
+        </div>
+        <div class="gridBox">
+            <div class="image" style="background-image: url(/media/{{postt.imgthree}});">
+                <!-- <img src="samir.jpeg" alt=""> -->
+            </div>
+        </div>
+        <div class="gridBox">
+            <div class="image" style="background-image: url(/media/{{postt.imgfour}});">
+                <!-- <img src="samir.jpeg" alt=""> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="longInfo">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet perferendis, iusto voluptates vitae adipisci
+            officiis deleniti at error voluptatem qui repudiandae nemo! Nemo saepe unde, sequi nam possimus adipisci
+            tenetur
+            facere numquam dolores reprehenderit voluptate. Sint, praesentium quas. Iste beatae et harum fuga eaque,
+            quia
+            tenetur ullam saepe. Vel necessitatibus voluptatum accusamus excepturi, commodi rerum culpa hic! Culpa,
+            natus!
+            At, similique quibusdam autem debitis sequi fugit provident cumque. Id minus eaque maiores alias expedita in
+            dolores sequi quis temporibus veniam ullam est, excepturi nam, vitae quam labore ducimus? Labore recusandae
+            velit rem alias et, eius porro ipsa sapiente numquam ducimus.</p>
+        <hr class="ani-hr">
+    </div>
+
+    <div class="gridContainer">
+        <div class="gridBox one">
+            <div class="image" style="background-image: url(/media/{{postt.imgfive}});">
+                <!-- <img src="samir.jpeg" alt=""> -->
+            </div>
+        </div>
+        <div class="gridBox two">
+            <div class="image" style="background-image: url(/media/{{postt.imgsix}});">
+                <!-- <img src="samir.jpeg" alt=""> -->
+            </div>
+        </div>
+        <div class="gridBox three">
+            <div class="image" style="background-image: url(/media/{{postt.imgseven}});">
+                <!-- <img src="samir.jpeg" alt=""> -->
+            </div>
+        </div>
+        <div class="gridBox four">
+            <div class="image" style="background-image: url(/media/{{postt.imgeight}});">
+                <!-- <img src="samir.jpeg" alt=""> -->
+            </div>
+        </div>
+    </div>
+    <!-- <img src="{/media/{{postt.mainimage}}}" alt=""> -->
+</body>
+
+</html>
