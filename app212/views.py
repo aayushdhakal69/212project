@@ -38,7 +38,6 @@ def index(request):
     postt = Blogupper.objects.all()
     contextt = {"postt": postt}
     return render(request, "index.html", contextt)
-    # return render(request, "index.html")
 
 
 def blogpost(request, slug):

@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{% static '212.png' %}" />
     <title>212</title>
 
     <!--
@@ -161,10 +160,6 @@
             cursor: pointer;
         }
 
-        .pho {
-            margin-bottom: 1rem;
-        }
-
         input,
         textarea {
             display: block;
@@ -179,7 +174,7 @@
         }
 
         :focus {
-            outline-color: red;
+            outline-color: var(--orange-yellow-crayola);
         }
 
         html {
@@ -550,10 +545,15 @@
             transition: color var(--transition-1);
         }
 
-        .active {
-
+        .navbar-link:hover {
+            color: var(--light-gray-70);
             color: var(--orange-yellow-crayola);
         }
+
+        .navbar-link.active {
+            color: var(--orange-yellow-crayola);
+        }
+
 
 
 
@@ -989,10 +989,10 @@
 
 
         /*-----------------------------------*\
-    #posts
+    #PORTFOLIO
   \*-----------------------------------*/
 
-        /* .filter-list {
+        .filter-list {
             display: none;
         }
 
@@ -1053,46 +1053,13 @@
 
         .select-item button:hover {
             --eerie-black-2: hsl(240, 2%, 20%);
-        } */
-
-
+        }
 
         .project-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
             margin-bottom: 10px;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .project-list li {
-            height: 15rem;
-            width: 15rem
-        }
-
-        .project-list a {
-            height: inherit;
-            width: inherit;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            /* background: red; */
-        }
-
-        .project-list .dateLocation {
-            display: flex;
-            flex-direction: column;
-            gap: .5rem;
-        }
-
-        .project-list figure {
-            height: 90%;
-            width: 100%;
-        }
-
-        .project-list img {
-            height: 100%;
-            width: 100%;
         }
 
         .project-item {
@@ -1121,7 +1088,7 @@
         .project-img {
             position: relative;
             width: 100%;
-            /* height: 200px; */
+            height: 200px;
             border-radius: 16px;
             overflow: hidden;
             margin-bottom: 15px;
@@ -1334,7 +1301,7 @@
         .input-wrapper {
             display: grid;
             grid-template-columns: 1fr;
-            column-gap: 25px;
+            gap: 25px;
             margin-bottom: 25px;
         }
 
@@ -1352,11 +1319,9 @@
             font-weight: var(--fw-500);
         }
 
-        /* :placeholder-shown {
-            border: 1px solid red;
-        } */
-
-
+        .form-input:focus {
+            border-color: var(--orange-yellow-crayola);
+        }
 
         textarea.form-input {
             min-height: 100px;
@@ -1452,7 +1417,7 @@
 
 
             /**
-     * #posts, BLOG 
+     * #PORTFOLIO, BLOG 
      */
 
             .project-img,
@@ -1720,12 +1685,6 @@
                 width: 35px;
             }
 
-            .form-input.message {
-                border: 1px solid red;
-            }
-
-
-
             /* clients */
 
             .clients-list {
@@ -1766,7 +1725,7 @@
 
 
             /**
-     * #posts, BLOG
+     * #PORTFOLIO, BLOG
      */
 
             .project-img,
@@ -1794,7 +1753,7 @@
             }
 
             .input-wrapper {
-                /* gap: 30px; */
+                gap: 30px;
                 margin-bottom: 30px;
             }
 
@@ -1881,14 +1840,14 @@
 
 
             /**
-     * posts
+     * PORTFOLIO
      */
 
             .article-title {
                 padding-bottom: 20px;
             }
 
-            /* .filter-select-box {
+            .filter-select-box {
                 display: none;
             }
 
@@ -1912,10 +1871,11 @@
             }
 
             .filter-item button.active {
-                color: var(--orange-yellow-crayola);
-            } */
+                /* color: var(--orange-yellow-crayola); */
+                color: red;
+            }
 
-            /* posts and blog grid */
+            /* portfolio and blog grid */
 
             .project-list,
             .blog-posts-list {
@@ -2048,7 +2008,7 @@
 
 
             /**
-     * posts
+     * PORTFOLIO
      */
 
             .project-list {
@@ -2219,30 +2179,18 @@
 
         }
 
+        /* 
         .class-space {
             margin-bottom: 1rem;
-        }
+        } */
 
-        /* error show css */
-        #nameError,
-        #contentError,
-        #phoneError {
-            color: #b8b8b8;
-        }
-
-        #phoneError {
-            margin-bottom: 20px;
-        }
-
-        /* nickname css */
         .content-card .hidden-outside {
             display: none;
         }
 
-        @media only screen and (max-width: 600px) {
-            .long {
-                margin-bottom: 25px;
-            }
+
+        .long {
+            margin-bottom: 1rem;
         }
     </style>
 
@@ -2302,7 +2250,7 @@
 
                         <div class="contact-info">
                             <p class="contact-title">Email</p>
-                            <a href="mailto:site@212amit.com" class="contact-link">site@212amit.com</a>
+                            <a href="site@212amit.com" class="contact-link">site@212amit.com</a>
                         </div>
 
                     </li>
@@ -2316,7 +2264,7 @@
                         <div class="contact-info">
                             <p class="contact-title">Phone</p>
 
-                            <a href="tel:+977 9845286215" class="contact-link">+977 9845286215</a>
+                            <a href="tel:+977 98452862151" class="contact-link">+977 9845286215</a>
                         </div>
 
                     </li>
@@ -2412,13 +2360,10 @@
                     <li class="navbar-item">
                         <button class="navbar-link" data-nav-link>Contact</button>
                     </li>
-
                     <li class="navbar-item">
                         <button class="navbar-link " data-nav-link>Blog</button>
                     </li>
-                    <li class="navbar-item">
-                        <button class="navbar-link " data-nav-link>Posts</button>
-                    </li>
+
                 </ul>
 
             </nav>
@@ -2490,7 +2435,7 @@
                                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Ashok Giri</h4>
 
                                 <div class="testimonials-text" data-testimonials-text>
-                                    <p class="hidden-outside" style="color: gold;">Kaleyy</p>
+                                    <p class="hidden-outside" style="color: gold;">Kaley</p>
                                     <p>
                                         Meet him. He is Ashok Giri, a black guy from Nepal.
                                     </p>
@@ -2523,17 +2468,17 @@
                             <div class="content-card" data-testimonials-item>
 
                                 <figure class="testimonials-avatar-box">
-                                    <img src="{% static 'avatar-4.png' %}" alt="Henry william" width="60"
+                                    <img src="{% static 'avatar-4.png' %}" alt="Aayush Dhakal" width="60"
                                         data-testimonials-avatar>
                                 </figure>
 
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Aayush Baba</h4>
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Aayush Dhakal</h4>
 
                                 <div class="testimonials-text" data-testimonials-text>
-                                    <p class="hidden-outside" style="color: gold;">Chalkapat Chabilal Charrke</p>
+                                    <p class="hidden-outside" style="color: gold;">Baba Aayush</p>
                                     <p>
-                                        Aayush is a full stack developer and wanna be AI Engineer. He loves to listen
-                                        Beatbox and also he is a cyber security geek.
+                                        Aayush is a god, he is a lord, young blood. Aayush baba
+                                        writes codes and drinks coffee coffee coffee coffee. Three times a day.
                                     </p>
                                 </div>
 
@@ -2705,20 +2650,13 @@
 
 
 
-            <!--
-        - #posts
+            <!--ˇ
+        - #PORTFOLIO
       -->
 
-            <article class="posts" data-page="posts">
-
-                <header>
-                    <h2 class="h2 article-title">posts</h2>
-                </header>
+            <article class="portfolio" data-page="portfolio">
 
                 <section class="projects">
-
-                    <ul class="filter-list">
-                    </ul>
 
                     <div class="filter-select-box">
 
@@ -2729,50 +2667,6 @@
                     </div>
 
                     <ul class="project-list">
-                        <!-- {% for post in postt %}
-                        <li class="project-item  active" data-filter-item data-category="web development">
-                            <a href=""></a>
-
-                            <figure class="project-img">
-                                <div class="project-item-icon-box">
-                                    <ion-icon name="eye-outline"></ion-icon>
-                                </div>
-
-                                <img src="/media/{{post.image}}" alt="samari_ko_pani">
-                            </figure>
-
-                            <h3 class="project-title">{{post.name}}</h3>
-                            <h3 class="project-title">Name</h3>
-
-                            <p class="project-category">Web development</p>
-
-                            </a>
-                        </li>
-                        {% endfor %} -->
-
-                        {% for post in postt %}
-                        <li class="project-item  active" data-filter-item data-category="web development">
-                            <a href="/blogpost/{{post.slug}}">
-
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <!-- <img src="{% static 'kaleyy.png' %}" alt="orizon" loading="lazy"> -->
-                                    <img src="/media/{{post.mainimage}}" alt="orizon" loading="lazy">
-                                </figure>
-
-                                <div class="dateLocation">
-
-                                    <h3 class="project-title">{{post.location}}</h3>
-
-                                    <p class="project-category">{{post.datee}}</p>
-                                </div>
-                            </a>
-                        </li>
-                        {% endfor %}
-                        <!-- 
                         <li class="project-item  active" data-filter-item data-category="web design">
                             <a href="#">
 
@@ -2781,61 +2675,7 @@
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
-                                    <img src="{% static '212.png' %}" alt="fundo" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Fundo</h3>
-
-                                <p class="project-category">Web design</p>
-
-                            </a>
-                        </li> -->
-
-                        <!-- <li class="project-item  active" data-filter-item data-category="applications">
-                            <a href="#">
-
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="{% static '212.png' %}" alt="brawlhalla" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Brawlhalla</h3>
-
-                                <p class="project-category">Applications</p>
-
-                            </a>
-                        </li> -->
-
-                        <!-- <li class="project-item  active" data-filter-item data-category="web design">
-                            <a href="#">
-
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="{% static '212.png' %}" alt="dsm." loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">DSM.</h3>
-
-                                <p class="project-category">Web design</p>
-
-                            </a>
-                        </li> -->
-
-                        <!-- <li class="project-item  active" data-filter-item data-category="web design">
-                            <a href="#">
-
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="{% static '212.png' %}" alt="metaspark" loading="lazy">
+                                    <img src="{% static 'project-6.png' %}" alt="metaspark" loading="lazy">
                                 </figure>
 
                                 <h3 class="project-title">MetaSpark</h3>
@@ -2843,67 +2683,17 @@
                                 <p class="project-category">Web design</p>
 
                             </a>
-                        </li> -->
+                        </li>
 
-                        <!-- <li class="project-item  active" data-filter-item data-category="web development">
-                            <a href="#">
 
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
 
-                                    <img src="{% static '212.png' %}" alt="summary" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Summary</h3>
-
-                                <p class="project-category">Web development</p>
-
-                            </a>
-                        </li> -->
-
-                        <!-- <li class="project-item  active" data-filter-item data-category="applications">
-                            <a href="#">
-
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="{% static '212.png' %}" alt="task manager" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Task Manager</h3>
-
-                                <p class="project-category">Applications</p>
-
-                            </a>
-                        </li> -->
-
-                        <!-- <li class="project-item  active" data-filter-item data-category="web development">
-                            <a href="#">
-
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="{% static '212.png' %}" alt="arrival" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Arrival</h3>
-
-                                <p class="project-category">Web development</p>
-
-                            </a>
-                        </li> -->
 
                     </ul>
 
                 </section>
 
             </article>
+
 
 
 
@@ -3019,25 +2809,22 @@
                     <form action="/" class="form" data-form method="post">
                         {%csrf_token%}
                         <div class="input-wrapper">
-                            <input type="text" name="name" class="form-input long " placeholder="Full name" required
-                                data-form-input onkeyup="validName(this)">
-                            <!-- <div class="long"></div> -->
-                            <input type="email" name="email" class="form-input" placeholder="Email address" required
+                            <input type="text" name="name" class="form-input" placeholder="Full name" required
                                 data-form-input>
-                            <div id="nameError"></div>
+
+                            <input type="text" name="phone" class="form-input" placeholder="Phone Number" required
+                                data-form-input>
                         </div>
 
-                        <input type="text" name="phone" class="form-input pho" placeholder="Phone Number" required
-                            data-form-input onkeyup="validPhone(this)">
-                        <div id="phoneError"></div>
+                        <input type="email" name="email" class="form-input long" placeholder="Email address" required
+                            data-form-input>
 
-                        <textarea name="content" class="form-input " placeholder="Your Message" required data-form-input
-                            onkeyup="validMessage(this)"></textarea>
-                        <div id="contentError"></div>
+                        <textarea name="content" class="form-input" placeholder="Your Message" required
+                            data-form-input></textarea>
 
                         <button class="form-btn" type="submit" disabled data-form-btn>
                             <ion-icon name="paper-plane"></ion-icon>
-                            <span class="submitButton">Send Message</span>
+                            <span>Send Message</span>
                         </button>
 
                     </form>
@@ -3055,7 +2842,6 @@
     - custom js link
   -->
     <script>
-
         'use strict';
 
 
@@ -3084,6 +2870,7 @@
         const modalImg = document.querySelector("[data-modal-img]");
         const modalTitle = document.querySelector("[data-modal-title]");
         const modalText = document.querySelector("[data-modal-text]");
+        const modalDate = document.querySelector("[datetime]");
 
         // modal toggle function
         const testimonialsModalFunc = function () {
@@ -3215,133 +3002,16 @@
 
             });
         }
-    </script>
-    <script>
+
+        // navlist 
+        let list = document.querySelectorAll(".navbar-link")
+        list.forEach((navLink) => {
+            navLink.addEventListener("click", () => {
+                navLink.classList.add("active");
+            })
+        })
 
 
-        let flag = 1; //1 is for not error  and 0 is for error
-        // const regixx = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-        const specialChars = (`(?=.*[!@#$%^&*\/])`)
-        function validName(elem) {
-            if (elem.value.trim() <= 0) {
-                document.querySelector("#nameError").innerText = "Name is required";
-                flag = 0;
-            } else {
-                if (!isNaN(elem.value)) {
-                    document.querySelector("#nameError").innerText =
-                        "Name must start with letter";
-                    flag = 0;
-                }
-                else {
-
-                    if (elem.value.match(`(?=.*[!@#$%^&*\/])`) || elem.value.match(`(?=.*[0-9])`)) {
-                        document.querySelector("#nameError").innerText =
-                            "Name must not have special characters and Numbers";
-                        flag = 0;
-                    }
-                    else {
-                        if (!elem.value.match(/^[a-zA-Z]+ [a-zA-Z]+$/)) {
-
-                            document.querySelector("#nameError").innerText = "Name Must Have First Name and Last Name"
-                            flag = 0
-                        }
-                        else {
-                            document.querySelector("#nameError").innerText = ""
-                            flag = 1
-
-                        }
-
-                    }
-                }
-            }
-        }
-        function validPhone(elem) {
-            if (elem.value.trim() <= 0) {
-                document.querySelector("#phoneError").innerText = "Please fill your number";
-                flag = 0;
-            } else {
-                if (isNaN(elem.value)) {
-                    document.querySelector("#phoneError").innerText =
-                        "Only supported numbers";
-                    flag = 0;
-                } else
-                    if (elem.value.length < 10) {
-                        document.querySelector("#phoneError").innerText = "Number must be 10 digits";
-                        flag = 0;
-                    }
-                    else {
-                        if (elem.value.length > 10) {
-                            document.querySelector("#phoneError").innerText = "Number must be 10 digits";
-                            flag = 0;
-                        }
-
-                        else {
-                            if (elem.value.length = 10) {
-                                document.querySelector("#phoneError").innerText = "";
-                                flag = 1;
-                            }
-                            else {
-                                document.querySelector("#phoneError").innerText = ""
-                                flag = 1
-                            }
-                        }
-                    }
-            }
-        }
-
-        function validMessage(elem) {
-            if (elem.value.trim() <= 0) {
-                document.querySelector("#contentError").innerText = "Write something";
-                flag = 0;
-            } else {
-                if (!isNaN(elem.value)) {
-                    document.querySelector("#contentError").innerText =
-                        "Must contain alfabets";
-                    flag = 0;
-                }
-                else {
-                    if (elem.value.length < 15) {
-                        document.querySelector("#contentError").innerText =
-                            "Must contain 15 characters";
-                        flag = 0;
-                    }
-                    else {
-                        document.querySelector("#contentError").innerText = ""
-                        flag = 1
-                    }
-                }
-            }
-        }
-        function validate() {
-            if (flag == 1) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-
-        // glow nav link
-        // Get all the elements with the class "item"
-        var items = document.getElementsByClassName("navbar-link");
-        console.log(items)
-
-        // Add event listeners to each item
-        for (var i = 0; i < items.length; i++) {
-            items[i].addEventListener("click", function () {
-                // Remove the active class from all items
-                for (var j = 0; j < items.length; j++) {
-                    items[j].classList.remove("active");
-                }
-                // Add the active class to the clicked item
-                this.classList.add("active");
-            });
-        }
-
-
-        //  
-        document.querySelector("#phone").add = "";
-        document.querySelector("#name").value = "";
     </script>
     <!--
     - ionicon link
