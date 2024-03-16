@@ -35,8 +35,9 @@ def index(request):
             fail_silently=False,
         )
 
-    postt = Blogupper.objects.all().order_by("-sno")
+    postt = Blogupper.objects.all()[::-1]
     contextt = {"postt": postt}
+    print(contextt)
     return render(request, "index.html", contextt)
 
 

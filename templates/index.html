@@ -994,7 +994,7 @@
 
 
         /*-----------------------------------*\
-    #PORTFOLIO
+    #posts
   \*-----------------------------------*/
 
         .filter-list {
@@ -1422,7 +1422,7 @@
 
 
             /**
-     * #PORTFOLIO, BLOG 
+     * #posts, BLOG 
      */
 
             .project-img,
@@ -1730,7 +1730,7 @@
 
 
             /**
-     * #PORTFOLIO, BLOG
+     * #posts, BLOG
      */
 
             .project-img,
@@ -1845,7 +1845,7 @@
 
 
             /**
-     * PORTFOLIO
+     * posts
      */
 
             .article-title {
@@ -1880,7 +1880,7 @@
                 color: red;
             }
 
-            /* portfolio and blog grid */
+            /* posts and blog grid */
 
             .project-list,
             .blog-posts-list {
@@ -2013,7 +2013,7 @@
 
 
             /**
-     * PORTFOLIO
+     * posts
      */
 
             .project-list {
@@ -2298,7 +2298,7 @@
                         <div class="contact-info">
                             <p class="contact-title">Location</p>
 
-                            <address>Hetauda, Nepal</address>
+                            <address>ON, Canada</address>
                         </div>
 
                     </li>
@@ -2353,29 +2353,25 @@
       -->
 
             <nav class="navbar">
-
                 <ul class="navbar-list">
-
                     <li class="navbar-item">
-                        <button class="navbar-link active " data-nav-link>About</button>
-                    </li>
-
-                    <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Resume</button>
+                        <button class="navbar-link active" data-nav-link="about">About</button>
                     </li>
                     <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Contact</button>
-                    </li>
-
-                    <li class="navbar-item">
-                        <button class="navbar-link " data-nav-link>Blog</button>
+                        <button class="navbar-link" data-nav-link="resume">Resume</button>
                     </li>
                     <li class="navbar-item">
-                        <button class="navbar-link " data-nav-link>Posts</button>
+                        <button class="navbar-link" data-nav-link="contact">Contact</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link="blog">Blog</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link="posts">Posts</button>
                     </li>
                 </ul>
-
             </nav>
+
 
 
 
@@ -2400,10 +2396,9 @@
                 </section>
 
 
-                 <!--
+                <!--
           - testimonials
         -->
-
                 <section class="testimonials">
 
                     <h3 class="h3 testimonials-title">F & F</h3>
@@ -2466,7 +2461,7 @@
                                 <div class="testimonials-text" data-testimonials-text>
                                     <p class="hidden-outside" style="color: hotpink;">Fuddhi</p>
                                     <p>
-                                        yo chai koi haina bash gay mmatra ho. yo gggggggaaaaayyyyyyyy ho
+                                        Yo chai koi haina bash gay mmatra ho. yo gggggggaaaaayyyyyyyy ho
                                     </p>
                                 </div>
 
@@ -2502,7 +2497,6 @@
                 <!--
           - testimonials modal
         -->
-
 
                 <div class="modal-container" data-modal-container>
 
@@ -2661,23 +2655,24 @@
 
 
             <!--
-        - #PORTFOLIO
+        - #posts
       -->
 
-            <article class="portfolio" data-page="portfolio">
+            <article class="posts" data-page="posts">
 
                 <header>
-                    <h2 class="h2 article-title">Portfolio</h2>
+                    <h2 class="h2 article-title">posts</h2>
                 </header>
 
                 <section class="projects">
 
-                    <ul class="filter-list">
+                    <!-- <ul class="filter-list">
 
                         <li class="filter-item">
                             <button class="active" data-filter-btn>All</button>
                         </li>
-                    </ul>
+
+                    </ul> -->
 
                     <div class="filter-select-box">
 
@@ -2702,27 +2697,6 @@
                     </div>
 
                     <ul class="project-list">
-                        <!-- {% for post in postt %}
-                        <li class="project-item  active" data-filter-item data-category="web development">
-                            <a href=""></a>
-
-                            <figure class="project-img">
-                                <div class="project-item-icon-box">
-                                    <ion-icon name="eye-outline"></ion-icon>
-                                </div>
-
-                                <img src="/media/{{post.image}}" alt="samari_ko_pani">
-                            </figure>
-
-                            <h3 class="project-title">{{post.name}}</h3>
-                            <h3 class="project-title">Name</h3>
-
-                            <p class="project-category">Web development</p>
-
-                            </a>
-                        </li>
-                        {% endfor %} -->
-
                         {% for post in postt %}
                         <li class="project-item  active" data-filter-item data-category="web development">
                             <a href="/blogpost/{{post.slug}}">
@@ -2732,7 +2706,6 @@
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
-                                    <!-- <img src="{% static 'kaleyy.png' %}" alt="orizon" loading="lazy"> -->
                                     <img src="/media/{{post.mainimage}}" alt="orizon" loading="lazy">
                                 </figure>
 
@@ -2743,6 +2716,24 @@
                             </a>
                         </li>
                         {% endfor %}
+                        <!-- 
+                        <li class="project-item  active" data-filter-item data-category="web development">
+                            <a href="#">
+
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="{% static 'kaleyy.png' %}" alt="orizon" loading="lazy">
+                                </figure>
+
+                                <h3 class="project-title">Orizon</h3>
+
+                                <p class="project-category">Web development</p>
+
+                            </a>
+                        </li> -->
                         <!-- 
                         <li class="project-item  active" data-filter-item data-category="web design">
                             <a href="#">
@@ -2978,7 +2969,7 @@
 
                 <section class="mapbox" data-mapbox>
                     <iframe class="haddi"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.27778178832!2d85.28484731645297!3d27.709030216162724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1688566991549!5m2!1sen!2snp"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93452.68301177172!2d-81.33101960481689!3d42.94885145022353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef20ea88d9b0b%3A0x28c7d7699a056b95!2sLondon%2C%20ON!5e0!3m2!1sen!2sca!4v1710111120055!5m2!1sen!2sca"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </figure>
@@ -3169,22 +3160,27 @@
         const pages = document.querySelectorAll("[data-page]");
 
         // add event to all nav link
+        // add event to all nav link
         for (let i = 0; i < navigationLinks.length; i++) {
             navigationLinks[i].addEventListener("click", function () {
-
-                for (let i = 0; i < pages.length; i++) {
-                    if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-                        pages[i].classList.add("active");
-                        navigationLinks[i].classList.add("active");
-                        window.scrollTo(0, 0);
+                const pageName = this.dataset.navLink; // Get the data-nav-link attribute value
+                for (let j = 0; j < pages.length; j++) {
+                    if (pageName === pages[j].dataset.page) {
+                        pages[j].classList.add("active");
                     } else {
-                        pages[i].classList.remove("active");
-                        navigationLinks[i].classList.remove("active");
+                        pages[j].classList.remove("active");
                     }
                 }
-
+                // Remove "active" class from all navigation links
+                for (let k = 0; k < navigationLinks.length; k++) {
+                    navigationLinks[k].classList.remove("active");
+                }
+                // Add "active" class to the clicked navigation link
+                this.classList.add("active");
+                window.scrollTo(0, 0);
             });
         }
+
 
         // navlist 
         let list = document.querySelectorAll(".navbar-link")
@@ -3303,8 +3299,8 @@
         document.querySelector("#name").value = "";
     </script>
     <!--
-    - ionicon link
-  -->
+- ionicon link
+-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
